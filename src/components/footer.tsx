@@ -127,13 +127,23 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-sm text-white/60">
-            © {new Date().getFullYear()} Tim Miller Recruiting. All rights reserved.
-          </p>
-          <p className="text-sm text-white/60">
-            Built for freight leaders who value clarity, speed, and trusted talent.
-          </p>
+        <div className="mt-16 border-t border-white/10 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-sm text-white/60">
+              © {new Date().getFullYear()} Tim Miller Recruiting. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacy"
+                className="text-sm text-white/80 transition hover:text-[#e6b85c] hover:underline"
+              >
+                Privacy Policy
+              </Link>
+              <p className="text-sm text-white/60">
+                Built for freight leaders who value clarity, speed, and trusted talent.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
