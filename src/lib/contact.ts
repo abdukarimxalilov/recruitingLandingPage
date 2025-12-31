@@ -8,8 +8,7 @@ export const contactSchema = z.object({
   company: z
     .string()
     .max(160, { message: "Company name is too long." })
-    .optional()
-    .transform((value) => value?.trim() || undefined),
+    .optional(),
   email: z
     .string()
     .nonempty({ message: "Email is required." })
@@ -21,14 +20,11 @@ export const contactSchema = z.object({
     .regex(/^[+\d().\-\s]{7,20}$/, {
       message: "Enter a valid phone number.",
     }),
-  intent: z.enum(["talent", "job", "partnership"], {
-    required_error: "Select an option.",
-  }),
+  intent: z.enum(["talent", "job", "partnership"], "Select an option."),
   message: z
     .string()
     .max(1200, { message: "Message should be under 1200 characters." })
-    .optional()
-    .transform((value) => value?.trim() || undefined),
+    .optional(),
 });
 
 export type ContactFormInput = z.infer<typeof contactSchema>;
