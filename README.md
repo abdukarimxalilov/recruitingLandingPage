@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tim Miller Recruiting Landing Page
+
+Modern, lead-focused marketing site for Tim Miller Recruiting. Built with Next.js 16, TypeScript, and Tailwind CSS 4 to showcase services, proof points, and contact funnels for fleet operators and logistics hiring teams.
+
+## Tech Stack
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS 4
+- Framer Motion for micro-interactions
+- Optional integrations: GA4, Meta Pixel, Calendly, Formspree/Resend
 
 ## Getting Started
-
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Visit `http://localhost:3000`.
+
+Lint the project:
+```bash
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
+Create a `.env.local` file to enable analytics or form delivery.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXX
+NEXT_PUBLIC_META_PIXEL_ID=1234567890
+FORMSPREE_ENDPOINT=https://formspree.io/f/example
+RESEND_API_KEY=your_resend_api_key
+EMAIL_TO=contact@timmillerrecruiting.com
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Only the GA and Meta IDs are optional; form variables will be wired in the contact form implementation step.
 
-## Learn More
+## Project Structure
+```
+src/
+  app/
+    api/og/route.tsx     # Dynamic Open Graph image
+    layout.tsx           # Global metadata, fonts, analytics
+    page.tsx             # Landing page composition
+    robots.ts, sitemap.ts
+  components/            # Reusable UI + sectional components
+  data/site.ts           # Centralized marketing content
+public/
+  logo-horizontal.svg
+  logo-mark.svg
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Content & Branding
+- Colors: Navy `#0A2540`, Sky `#2E8BFF`, Gray `#F5F6FA`, Charcoal `#2C2C2C`, Lime accent `#A3E635`.
+- Typography: Poppins for headings, Inter for body, optional Playfair accents.
+- Brand reference: `docs/brand-style.md`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Next Steps
+- Hook up the contact form with validation and email delivery.
+- Add CMS or data hooks if content needs to be editable by non-technical users.
+- Configure deployment (Vercel/Netlify) with environment secrets once ready.
