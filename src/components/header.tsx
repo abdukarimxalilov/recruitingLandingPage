@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { company } from "@/data/site";
 import { Button } from "./ui/button";
@@ -25,13 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border-muted)] bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo-horizontal.svg"
-            alt="Tim Miller Recruiting logo"
-            width={200}
-            height={75}
-            priority
-          />
+          <span className="text-2xl font-bold text-[#1b4d8a]">TruckingJob</span>
         </Link>
         <nav
           aria-label="Primary"

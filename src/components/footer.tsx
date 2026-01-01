@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { company } from "@/data/site";
 
@@ -34,13 +33,7 @@ export function Footer() {
           {/* Left: Logo & Tagline */}
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <Image
-                src="/logo-horizontal.svg"
-                alt="Tim Miller Recruiting"
-                width={140}
-                height={56}
-                className="w-auto"
-              />
+              <span className="text-3xl font-bold text-[#e6b85c]">TruckingJob</span>
             </div>
             <p className="max-w-md text-lg leading-relaxed text-white/80">
               {footerTagline}
